@@ -27,14 +27,14 @@ public class UserController {
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
     }
 
-   /* @DeleteMapping("/deleteUser/{id}")
+    @DeleteMapping("/deleteUser/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         Response<?> okResponse = userService.deleteUser(id);
         return new ResponseEntity<>(okResponse, HttpStatus.OK);
-    }*/
+    }
 
 
-   /* @PutMapping("/editUser/{id")
+    @PutMapping("/editUser/{id}")
     public ResponseEntity<?> editUser(@PathVariable Long id, @RequestBody User user) {
         Response<?> okResponse = userService.editUser(id, user);
         return new ResponseEntity<>(okResponse, HttpStatus.OK);
@@ -43,5 +43,5 @@ public class UserController {
     @GetMapping("/getAll")
     public ResponseEntity<?> getAll() {
         return ResponseEntity.ok(userService.getAll());
-    }*/
+    }
 }

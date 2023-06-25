@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RoleService {
@@ -25,7 +26,11 @@ public class RoleService {
     }
 
     public Response<Role> addNewRole(Role role) {
-
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), roleRepository.save(role));
+    }
+
+    public Role getRoleById(Long id) {
+        Optional<Role> byId = roleRepository.findById(id);
+        return byId.orElse(null);
     }
 }
