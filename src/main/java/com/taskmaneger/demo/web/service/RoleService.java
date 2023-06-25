@@ -2,7 +2,7 @@ package com.taskmaneger.demo.web.service;
 
 
 import com.taskmaneger.demo.web.dataModel.Role;
-import com.taskmaneger.demo.web.dto.OkResponse;
+import com.taskmaneger.demo.web.dto.Response;
 import com.taskmaneger.demo.web.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,8 +24,8 @@ public class RoleService {
         return roleRepository.findAll();
     }
 
-    public OkResponse<Role> addNewRole(Role role) {
+    public Response<Role> addNewRole(Role role) {
 
-        return new OkResponse<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), roleRepository.save(role));
+        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), roleRepository.save(role));
     }
 }

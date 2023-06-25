@@ -2,7 +2,7 @@ package com.taskmaneger.demo.web.api;
 
 
 import com.taskmaneger.demo.web.dataModel.Role;
-import com.taskmaneger.demo.web.dto.OkResponse;
+import com.taskmaneger.demo.web.dto.Response;
 import com.taskmaneger.demo.web.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +29,7 @@ public class RoleController {
 
     @PostMapping("/addRole")
     public ResponseEntity<?> addNewRole(@RequestBody Role role) {
-        OkResponse<Role> roleOkResponse = roleService.addNewRole(role);
-        return new ResponseEntity<>(roleOkResponse, HttpStatus.OK);
+        Response<Role> roleResponse = roleService.addNewRole(role);
+        return new ResponseEntity<>(roleResponse, HttpStatus.OK);
     }
 }

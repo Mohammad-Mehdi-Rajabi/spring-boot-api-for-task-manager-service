@@ -3,12 +3,12 @@ package com.taskmaneger.demo.web.dto;
 import lombok.Data;
 
 @Data
-public class OkResponse<T> {
+public class Response<T> {
     private int code;
     private String massage;
     private T body;
 
-    public OkResponse(int code, String massage, T t) {
+    public Response(int code, String massage, T t) {
         this.code = code;
         this.massage = massage;
         this.body = t;
@@ -16,7 +16,7 @@ public class OkResponse<T> {
 
     @Override
     public String toString() {
-        return "OkResponse{" +
+        return "Response{" +
                 "code=" + code +
                 ", massage='" + massage + '\'' +
                 ", body=" + body +
