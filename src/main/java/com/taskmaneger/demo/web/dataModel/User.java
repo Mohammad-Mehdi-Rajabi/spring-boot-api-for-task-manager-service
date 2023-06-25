@@ -28,6 +28,9 @@ public class User {
     @JoinColumn(name = "RoleId", nullable = false)
     private Role role;
 
+
+    private String address;
+
     @Override
     public String toString() {
         return "User{" +
@@ -39,6 +42,7 @@ public class User {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", role=" + role +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
