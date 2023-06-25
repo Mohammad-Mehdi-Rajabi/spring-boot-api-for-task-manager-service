@@ -3,6 +3,7 @@ package com.taskmaneger.demo.web.api;
 
 import com.taskmaneger.demo.web.dataModel.User;
 import com.taskmaneger.demo.web.dto.Response;
+import com.taskmaneger.demo.web.dto.UserDto;
 import com.taskmaneger.demo.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,8 @@ public class UserController {
 
 
     @PostMapping("/addUser")
-    public ResponseEntity<?> addNewUser(@RequestBody User user) {
-        Response<User> userResponse = userService.addNewUser(user);
+    public ResponseEntity<?> addNewUser(@RequestBody UserDto userDto) {
+        Response<User> userResponse = userService.addNewUser(userDto);
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
     }
 
@@ -35,8 +36,8 @@ public class UserController {
 
 
     @PutMapping("/editUser/{id}")
-    public ResponseEntity<?> editUser(@PathVariable Long id, @RequestBody User user) {
-        Response<?> okResponse = userService.editUser(id, user);
+    public ResponseEntity<?> editUser(@PathVariable Long id, @RequestBody UserDto userDto) {
+        Response<?> okResponse = userService.editUser(id, userDto);
         return new ResponseEntity<>(okResponse, HttpStatus.OK);
     }
 

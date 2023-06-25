@@ -33,4 +33,9 @@ public class RoleService {
         Optional<Role> byId = roleRepository.findById(id);
         return byId.orElse(null);
     }
+
+    public Response<?> deleteById(long id){
+        roleRepository.deleteById(id);
+        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+    }
 }

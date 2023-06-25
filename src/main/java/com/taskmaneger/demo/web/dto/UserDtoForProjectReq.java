@@ -1,15 +1,17 @@
 package com.taskmaneger.demo.web.dto;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 @Data
-public class RoleDto {
+@Component
+public class UserDtoForProjectReq {
 
     private long id;
 
     @Override
     public String toString() {
-        return "RoleDto{" +
+        return "UserDtoForProjectReq{" +
                 "id=" + id +
                 '}';
     }

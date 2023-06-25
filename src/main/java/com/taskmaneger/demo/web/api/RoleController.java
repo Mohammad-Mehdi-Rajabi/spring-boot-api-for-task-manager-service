@@ -32,4 +32,10 @@ public class RoleController {
         Response<Role> roleResponse = roleService.addNewRole(role);
         return new ResponseEntity<>(roleResponse, HttpStatus.OK);
     }
+
+    @DeleteMapping("/deleteRoleById/{id}")
+    public ResponseEntity<?> deleteRole(@PathVariable long id) {
+        Response<?> response = roleService.deleteById(id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

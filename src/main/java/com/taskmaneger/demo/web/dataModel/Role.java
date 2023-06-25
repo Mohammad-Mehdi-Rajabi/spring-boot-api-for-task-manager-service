@@ -11,10 +11,11 @@ import javax.persistence.*;
 public class Role {
 
     @Id
-    @SequenceGenerator(name = "role_sequence",sequenceName = "role_sequence", initialValue = 10000)
+    @SequenceGenerator(name = "role_sequence", sequenceName = "role_sequence", initialValue = 10000)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_sequence")
     private long id;
     private String roleName;
+    private Type type;
 
 
     @Override
@@ -22,6 +23,12 @@ public class Role {
         return "Role{" +
                 "id=" + id +
                 ", roleName='" + roleName + '\'' +
+                ", type=" + type +
                 '}';
+    }
+
+    public enum Type {
+        MANAGER_USER,
+        COMMON_USER
     }
 }

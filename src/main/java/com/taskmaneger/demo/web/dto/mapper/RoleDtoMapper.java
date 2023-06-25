@@ -4,7 +4,9 @@ import com.taskmaneger.demo.web.dataModel.Role;
 import com.taskmaneger.demo.web.dto.RoleDto;
 import com.taskmaneger.demo.web.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RoleDtoMapper implements Mapper<RoleDto, Role> {
     private RoleService roleService;
 
