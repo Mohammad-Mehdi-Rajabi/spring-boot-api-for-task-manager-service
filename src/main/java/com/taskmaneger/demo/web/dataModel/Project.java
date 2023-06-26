@@ -21,7 +21,7 @@ public class Project {
     @Column(length = 100000)
     private String about;
 
-    @OneToMany
+    @ManyToMany
     private List<User> userList;
 
     private Date startDate;

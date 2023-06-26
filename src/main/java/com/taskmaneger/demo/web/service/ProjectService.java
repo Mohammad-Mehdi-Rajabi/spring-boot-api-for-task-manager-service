@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class ProjectService {
@@ -30,7 +31,18 @@ public class ProjectService {
 
     @Transactional
     public Response<?> editProjectById(long id, ProjectDto projectDto) {
+        //todo fix bug
         projectRepository.editProjectById(id, projectDtoMapper.DtoToModel(projectDto));
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+    }
+
+    public Response<?> deleteById(long id) {
+        projectRepository.deleteById(id);
+        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+    }
+
+    public List<?> getAll() {
+        List<Project> all = projectRepository.findAll();
+        return all;
     }
 }

@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/project/")
 public class ProjectController {
@@ -32,5 +34,17 @@ public class ProjectController {
     public ResponseEntity<?> editProjectById(@PathVariable long id, @RequestBody ProjectDto projectDto) {
         Response<?> response = projectService.editProjectById(id, projectDto);
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deleteProject/{id}")
+    public ResponseEntity<?> deleteProject(@PathVariable long id) {
+        Response<?> response = projectService.deleteById(id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/getAll")
+    public ResponseEntity<?> getAllProject() {
+        List<?> all = projectService.getAll();
+        return new ResponseEntity<>(all, HttpStatus.OK);
     }
 }
