@@ -1,0 +1,110 @@
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    padding: 20px;
+    margin-top: 20px;
+    width: 500px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-field select,
+.form-field input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: 'B Nazanin', sans-serif;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-field button {
+    margin-top: 10px;
+    align-self: flex-start;
+    background-color: #dc3545;
+    color: #fff;
+    font-family: 'B Nazanin', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.progress-bar-container {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.progress-bar-label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.progress-bar-fill {
+    width: 60%;
+    height: 100%;
+    background-color:  #02be14;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+}
+
+.footer {
+    margin-top: 10px;
+}
+
+.financial-section {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.financial-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.financial-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 50px;
+}
+
+.financial-field input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: 'B Nazanin', sans-serif;
+    border-radius: 4px;
+    width: 100%;
+}

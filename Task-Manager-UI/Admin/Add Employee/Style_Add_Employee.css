@@ -1,0 +1,59 @@
+body {
+    background-color: #0b0e29;
+    font-family: 'B Nazanin', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: '2  Mitra_5 (MRT)', sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.form-section {
+
+    font-family: 'B Nazanin', sans-serif;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-field input,
+.form-field select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    font-family: 'B Nazanin', sans-serif;
+}
+
+.form-field button {
+    align-items: flex-end;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'B Nazanin', sans-serif;
+    font-size: 16px;
+    background-color: #02be14;
+    color: #fff;
+}
+

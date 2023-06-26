@@ -1,0 +1,49 @@
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-container {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-field select,
+.form-field textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: 'B Nazanin', sans-serif;
+    border-radius: 4px;
+    width: 600px;
+    cols: 200;
+}
+
+.form-field button {
+    margin-top: 10px;
+    align-self: flex-start;
+    font-family: 'B Nazanin', sans-serif;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.home-button, .exit-button {
+    margin-top: 130px;
+}

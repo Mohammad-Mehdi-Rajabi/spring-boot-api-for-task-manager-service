@@ -1,0 +1,123 @@
+body {
+    background-color: #0b0e29;
+    font-family: 'B Zar', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    border-radius: 4px;
+    max-width: 600px;
+    height: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-family: '2  Mitra_5 (MRT)', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.profile {
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+.profile p {
+    margin-top: 10px;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.box {
+    flex: 0 0 calc(50% - 20px);
+    transition: transform 0.3s;
+    background-color: #f3cb00;
+    border: 1px dashed #181818;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.box-title {
+    font-family: '2  Nikoo', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.box-members {
+    font-family: 'B Nazanin', sans-serif;
+    font-size: 14px;
+    color: #181818;
+    margin-bottom: 5px;
+}
+
+.box-description {
+    font-family: 'B Nazanin', sans-serif;
+    font-size: 14px;
+}
+
+.box:hover {
+    background-color: rgba(218, 215, 215, 0.73);
+}
+
+.exit-button {
+    font-family: 'B Nazanin', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    align-self: flex-start;
+    background-color: #dc3545;
+    color: #fff;
+    width: 70px;
+    margin-top: 20px;
+}
+
+.home-button:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+.home-button {
+    font-family: 'B Nazanin', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    align-self: flex-start;
+    background-color: #018d0c;
+    color: #fff;
+    width: 70px;
+    cursor: pointer;
+}
+
+.exit-button:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+
+.footer {
+    margin-top: 20px;
+}
+
+a.home-button {
+    color: white;
+}

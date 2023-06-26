@@ -1,0 +1,138 @@
+body {
+    background-color: #0b0e29;
+    font-family: 'B Zar', sans-serif;
+    margin: 0;
+    padding: -10px;
+    max-width: 600px;
+    height: 500px;
+    margin: 50px auto;
+}
+
+h1 {
+    font-family: '2  Mitra_5 (MRT)', sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 600px;
+    height: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-section {
+    font-family: 'B Nazanin', sans-serif;
+}
+
+.form-container {
+    margin-left: 20px;;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-field textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: 'B Nazanin', sans-serif;
+    border-radius: 4px;
+    width: 200px;
+    height: 100px; /* افزایش ارتفاع تکست‌آریا */
+}
+
+.form-field input,
+.form-field select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'B Nazanin', sans-serif;
+    width: 260px;
+}
+
+.form-field button {
+    align-items: flex-end;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'B Nazanin', sans-serif;
+    font-size: 16px;
+    background-color: #018d0c;
+    color: #fff;
+}
+
+.form-field button:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-field label {
+    text-align: right;
+}
+
+.form-field textarea,
+.form-field input,
+.form-field select {
+    text-align: left;
+}
+
+
+.member-role-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    margin-top: 0px;
+}
+
+.date-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
+}
+
+.member-role-field select {
+    width: 180px;
+    max-width: 160px;
+}
+
+#test {
+    margin-left: 120px;
+}
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدیریت نقش های کاربری</title>
+  <link rel="stylesheet" href="Style_User_Role_Managment.css">
+  <link rel="stylesheet" href="../main/Style_main.css">
+</head>
+<body dir="rtl">
+<div class="container">
+  <h1>مدیریت نقش های کاربری</h1>
+  <br>
+  <div class="form-container">
+    <div class="form-field">
+      <label for="role-title">عنوان نقش کاربری:</label>
+      <input type="text" id="role-title">
+    </div>
+    <div class="form-field">
+      <button id="add-role-btn">اضافه کردن</button>
+    </div>
+  </div>
+  <div class="form-container">
+    <div class="form-field">
+      <label for="role-title">عنوان نقش کاربری:</label>
+      <input type="text" id="role-title">
+    </div>
+    <div class="form-field">
+      <button id="delete-role-btn">حذف کردن</button>
+    </div>
+  </div>
+  <hr class="separator-line">
+  <h3>نقش های کاربری</h3>
+  <div class="user-roles">
+    <div class="role-list-container">
+      <ul id="role-list">
+        <li>نقش 1</li>
+        <li>نقش 2</li>
+        <li>نقش 3</li>
+        <li>نقش 4</li>
+        <li>نقش 5</li>
+        <li>نقش 6</li>
+        <li>نقش 7</li>
+        <li>نقش 8</li>
+        <li>نقش 9</li>
+        <li>نقش 10</li>
+        <li>نقش 11</li>
+        <li>نقش 12</li>
+        <li>نقش 13</li>
+        <li>نقش 14</li>
+        <li>نقش 15</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <a href="../../Admin/main/index.html"><button class="home-button">خانه</button></a>
+
+    <button class="exit-button">خروج</button>
+  </div>
+</div>
+<script>
+  document.getElementById('add-role-btn').addEventListener('click', function() {
+    var roleTitle = document.getElementById('role-title').value;
+    if (roleTitle !== '') {
+      var listItem = document.createElement('li');
+      listItem.textContent = roleTitle;
+      document.getElementById('role-list').appendChild(listItem);
+      document.getElementById('role-title').value = '';
+    }
+  });
+  var roleList = document.getElementById('role-list');
+
+  roleList.addEventListener('click', function(event) {
+    if (event.target.matches('li')) {
+      var selectedRole = event.target;
+
+      // حذف کلاس "highlight" از ردیف‌های دیگر
+      var allRoles = roleList.querySelectorAll('li');
+      allRoles.forEach(function(role) {
+        role.classList.remove('highlight');
+      });
+
+      // افزودن کلاس "highlight" به ردیف انتخاب شده
+      selectedRole.classList.add('highlight');
+    }
+  });
+  var selectedRoleToDelete;
+
+  document.getElementById('delete-role-btn').addEventListener('click', function() {
+    if (selectedRoleToDelete) {
+      selectedRoleToDelete.remove();
+      selectedRoleToDelete = null;
+    }
+  });
+
+  var roleList = document.getElementById('role-list');
+
+  roleList.addEventListener('click', function(event) {
+    if (event.target.matches('li')) {
+      var selectedRole = event.target;
+
+      // حذف کلاس "highlight" از ردیف‌های دیگر
+      var allRoles = roleList.querySelectorAll('li');
+      allRoles.forEach(function(role) {
+        role.classList.remove('highlight');
+      });
+
+      // افزودن کلاس "highlight" به ردیف انتخاب شده
+      selectedRole.classList.add('highlight');
+
+      selectedRoleToDelete = selectedRole;
+    }
+  });
+</script>
+</body>
+</html>

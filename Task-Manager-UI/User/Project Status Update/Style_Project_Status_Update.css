@@ -1,0 +1,145 @@
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 25px;
+    font-family: "2  Mitra_5 (MRT)";
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    padding: 20px;
+    margin-top: 20px;
+    width: 500px;
+}
+
+.form-field {
+    font-size: 18px;
+    font-family: "B Nazanin";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-field select,
+.form-field input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: 'B Zar', sans-serif;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #02be14;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+    font-family: "B Nazanin";
+    font-size: 16px;
+}
+
+.progress-bar-container {
+    font-family: "B Nazanin";
+    font-size: 16px;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.progress-bar-label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.financial-section {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.financial-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.financial-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 50px;
+}
+
+.financial-field input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: 'B Nazanin', sans-serif;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.exit-button {
+    font-family: 'B Nazanin', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    align-self: flex-start;
+    background-color: #dc3545;
+    color: #fff;
+    width: 70px;
+    margin-top: 20px;
+}
+
+.home-button:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+.home-button {
+    font-family: 'B Nazanin', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    align-self: flex-start;
+    background-color: #018d0c;
+    color: #fff;
+    width: 70px;
+    cursor: pointer;
+}
+
+.exit-button:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+
+.footer {
+    margin-top: 20px;
+}
+
+a.home-button {
+    color: white;
+}

@@ -1,0 +1,126 @@
+h1 {
+    font-family: '2  Mitra_5 (MRT)', sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    font-size: 16px;
+    font-family: "B Nazanin";
+    padding: 20px;
+    margin-top: 20px;
+    width: 500px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-field select,
+.form-field input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: 'B Zar', sans-serif;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-field button {
+    margin-top: 10px;
+    align-self: flex-start;
+    background-color: #dc3545;
+    color: #fff;
+    font-family: 'B Zar', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.financial-section {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.financial-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -15px;
+}
+
+.financial-field label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 50px;
+}
+
+.financial-field input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: 'B Zar', sans-serif;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.hr {
+    border: 0.5px dashed rgba(128, 128, 128, 0.73);
+}
+
+.exit-button {
+    font-family: 'B Nazanin', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    align-self: flex-start;
+    background-color: #dc3545;
+    color: #fff;
+    width: 70px;
+}
+
+.home-button:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+.home-button {
+    font-family: 'B Nazanin', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    align-self: flex-start;
+    background-color: #018d0c;
+    color: #fff;
+    width: 70px;
+    cursor: pointer;
+}
+
+.exit-button:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+.footer {
+    margin-top: 0px;
+}
+
+a.home-button {
+    color: white;
+}

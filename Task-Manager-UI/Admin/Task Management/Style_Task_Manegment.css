@@ -1,0 +1,75 @@
+body {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-container {
+    max-width: 580px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: right;
+    box-sizing: border-box;
+    font-family: 'B Nazanin', sans-serif;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.home-button,
+.exit-button {
+    font-family: 'B Nazanin', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    color: #fff;
+    width: 70px;
+    margin: 0px;
+}
+
+.home-button {
+    background-color: #018d0c;
+}
+
+.exit-button {
+    background-color: #dc3545;
+}
+
+.home-button:hover,
+.exit-button:hover {
+    background-color: rgb(128, 128, 128);
+}

@@ -1,0 +1,77 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    margin-top: 0px;
+    margin-right: 10px;
+}
+#delete-role-btn {
+    margin-left: 2.5px;
+}
+
+.form-field input,
+.form-field select {
+    padding: 8px;
+    margin-right: 70px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    font-family: 'B Nazanin', sans-serif
+}
+
+#add-role-btn, #delete-role-btn{
+    border: none;
+    padding: 7px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'B Nazanin', sans-serif;
+    font-size: 16px;
+    background-color: #018d0c;
+    color: #fff;
+    margin-bottom: -20px;
+}
+
+h3 {
+    font-family: "B Nazanin";
+    font-size: 20px;
+}
+#add-role-btn:hover, #delete-role-btn:hover {
+    background-color: rgb(128, 128, 128);
+}
+.separator-line {
+    border: 0.75px solid rgba(128, 128, 128, 0.73);
+    margin: 20px 0;
+}
+
+.user-roles {
+    max-height: 120px;
+    overflow-y: scroll;
+    border: 1px solid rgba(128, 128, 128, 0.73);
+    padding: 10px;
+}
+
+.user-roles h2 {
+    margin-bottom: 10px;
+}
+
+.role-list-container {
+    overflow-y: auto;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.highlight {
+    background-color: rgba(197, 197, 197, 0.73);
+    color: #181818;
+}
