@@ -3,7 +3,7 @@ package com.taskmaneger.demo.web.dto.mapper;
 import com.taskmaneger.demo.web.dataModel.Project;
 import com.taskmaneger.demo.web.dataModel.User;
 import com.taskmaneger.demo.web.dto.ProjectDto;
-import com.taskmaneger.demo.web.dto.UserDtoForProjectReq;
+import com.taskmaneger.demo.web.dto.UserDtoForReq;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,11 +13,11 @@ import java.util.List;
 @Component
 public class ProjectDtoMapper implements Mapper<ProjectDto, Project> {
 
-    private UserDtoForProjectReqMapper userDtoForProjectReqMapper;
+    private UserDtoForReqMapper userDtoForReqMapper;
 
     @Autowired
-    public ProjectDtoMapper(UserDtoForProjectReqMapper userDtoForProjectReqMapper) {
-        this.userDtoForProjectReqMapper = userDtoForProjectReqMapper;
+    public ProjectDtoMapper(UserDtoForReqMapper userDtoForReqMapper) {
+        this.userDtoForReqMapper = userDtoForReqMapper;
     }
 
     @Override
@@ -28,11 +28,11 @@ public class ProjectDtoMapper implements Mapper<ProjectDto, Project> {
         projectDto.setId(model.getId());
         projectDto.setStartDate(model.getStartDate());
         projectDto.setSubject(model.getSubject());
-        List<UserDtoForProjectReq> userDtoForProjectReqList = new ArrayList<>();
+        List<UserDtoForReq> userDtoForReqList = new ArrayList<>();
         model.getUserList().forEach(user -> {
-            userDtoForProjectReqList.add(userDtoForProjectReqMapper.modelToDto(user));
+            userDtoForReqList.add(userDtoForReqMapper.modelToDto(user));
         });
-        projectDto.setUserList(userDtoForProjectReqList);
+        projectDto.setUserList(userDtoForReqList);
         return projectDto;
     }
 
@@ -46,7 +46,7 @@ public class ProjectDtoMapper implements Mapper<ProjectDto, Project> {
         project.setSubject(dto.getSubject());
         List<User> userList = new ArrayList<>();
         dto.getUserList().forEach(user -> {
-            userList.add(userDtoForProjectReqMapper.DtoToModel(user));
+            userList.add(userDtoForReqMapper.DtoToModel(user));
         });
         project.setUserList(userList);
         return project;

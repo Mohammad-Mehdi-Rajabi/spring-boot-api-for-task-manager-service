@@ -1,6 +1,7 @@
 package com.taskmaneger.demo.web.api;
 
 
+import com.taskmaneger.demo.web.dataModel.Project;
 import com.taskmaneger.demo.web.dto.ProjectDto;
 import com.taskmaneger.demo.web.dto.Response;
 import com.taskmaneger.demo.web.service.ProjectService;
@@ -46,5 +47,11 @@ public class ProjectController {
     public ResponseEntity<?> getAllProject() {
         List<?> all = projectService.getAll();
         return new ResponseEntity<>(all, HttpStatus.OK);
+    }
+
+    @GetMapping("/getProjectById/{id}")
+    public ResponseEntity<?> getProjectById(@PathVariable long id) {
+        Project project = projectService.getProjectById(id);
+        return new ResponseEntity<>(project, HttpStatus.OK);
     }
 }

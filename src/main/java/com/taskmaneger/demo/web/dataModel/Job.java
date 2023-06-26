@@ -29,7 +29,5 @@ public class Job {
     @Column(length = 10000)
     private String about;
 
-   //todo add attached file
-
 
 }

@@ -29,13 +29,14 @@ public class RoleService {
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), roleRepository.save(role));
     }
 
-    public Role getRoleById(Long id) {
-        Optional<Role> byId = roleRepository.findById(id);
-        return byId.orElse(null);
-    }
 
-    public Response<?> deleteById(long id){
+    public Response<?> deleteById(long id) {
         roleRepository.deleteById(id);
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+    }
+
+    public Role getRoleById(long id) {
+        Optional<Role> byId = roleRepository.findById(id);
+        return byId.orElse(null);
     }
 }

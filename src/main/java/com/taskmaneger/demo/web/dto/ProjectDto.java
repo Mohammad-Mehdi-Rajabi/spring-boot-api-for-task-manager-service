@@ -14,7 +14,7 @@ public class ProjectDto {
     private long id;
     private String subject;
     private String about;
-    private List<UserDtoForProjectReq> userList;
+    private List<UserDtoForReq> userList;
     private Date startDate;
     private Date endDate;
 

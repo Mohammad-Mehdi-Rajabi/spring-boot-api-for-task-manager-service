@@ -22,6 +22,9 @@ public class Project {
     private String about;
 
     @ManyToMany
+    @JoinTable(name = "project_user_list",
+    joinColumns = @JoinColumn(name = "project_id" , referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(name = "user_id" , referencedColumnName = "id"))
     private List<User> userList;
 
     private Date startDate;

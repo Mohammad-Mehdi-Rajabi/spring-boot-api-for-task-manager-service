@@ -2,6 +2,7 @@ package com.taskmaneger.demo.web.service;
 
 
 import com.taskmaneger.demo.web.dataModel.Project;
+import com.taskmaneger.demo.web.dataModel.User;
 import com.taskmaneger.demo.web.dto.ProjectDto;
 import com.taskmaneger.demo.web.dto.Response;
 import com.taskmaneger.demo.web.dto.mapper.ProjectDtoMapper;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProjectService {
@@ -44,5 +46,9 @@ public class ProjectService {
     public List<?> getAll() {
         List<Project> all = projectRepository.findAll();
         return all;
+    }
+    public Project getProjectById(Long id) {
+        Optional<Project> byId = projectRepository.findById(id);
+        return byId.orElse(null);
     }
 }

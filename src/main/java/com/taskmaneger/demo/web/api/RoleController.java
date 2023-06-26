@@ -38,4 +38,10 @@ public class RoleController {
         Response<?> response = roleService.deleteById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @GetMapping("/getRoleById/{id}")
+    public ResponseEntity<?> getRoleById(@PathVariable long id) {
+        Role role = roleService.getRoleById(id);
+        return new ResponseEntity<>(role, HttpStatus.OK);
+    }
 }
