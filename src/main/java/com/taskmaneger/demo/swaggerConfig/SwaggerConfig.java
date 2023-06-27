@@ -1,4 +1,4 @@
-package com.taskmaneger.demo.config;
+package com.taskmaneger.demo.swaggerConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

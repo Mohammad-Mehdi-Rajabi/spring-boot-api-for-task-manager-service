@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user/")
-@CrossOrigin
 public class UserController {
 
     private UserService userService;
@@ -23,31 +22,31 @@ public class UserController {
     }
 
 
-    @PostMapping("/addUser")
+    @PostMapping(value = "/addUser", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> addNewUser(@RequestBody UserDto userDto) {
         Response<User> userResponse = userService.addNewUser(userDto);
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteUser/{id}")
+    @DeleteMapping(value = "/deleteUser/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         Response<?> okResponse = userService.deleteUser(id);
         return new ResponseEntity<>(okResponse, HttpStatus.OK);
     }
 
 
-    @PutMapping("/editUser/{id}")
+    @PutMapping(value = "/editUser/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> editUser(@PathVariable Long id, @RequestBody UserDto userDto) {
         Response<?> okResponse = userService.editUser(id, userDto);
         return new ResponseEntity<>(okResponse, HttpStatus.OK);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping(value = "/getAll", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> getAll() {
         return ResponseEntity.ok(userService.getAll());
     }
 
-    @GetMapping("/getUserById/{id}")
+    @GetMapping(value = "/getUserById/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> getUserById(@PathVariable long id) {
         User userById = userService.getUserById(id);
         return new ResponseEntity<>(userById, HttpStatus.OK);

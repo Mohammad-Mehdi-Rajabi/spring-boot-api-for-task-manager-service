@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/project/")
-@CrossOrigin
 public class ProjectController {
 
     private ProjectService projectService;
@@ -26,31 +25,31 @@ public class ProjectController {
     }
 
 
-    @PostMapping("/addProject")
+    @PostMapping(value = "/addProject", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> addProject(@RequestBody ProjectDto projectDto) {
         Response<?> response = projectService.addProject(projectDto);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PutMapping("editProject/{id}")
+    @PutMapping(value = "editProject/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> editProjectById(@PathVariable long id, @RequestBody ProjectDto projectDto) {
         Response<?> response = projectService.editProjectById(id, projectDto);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteProject/{id}")
+    @DeleteMapping(value = "/deleteProject/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> deleteProject(@PathVariable long id) {
         Response<?> response = projectService.deleteById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping(value = "/getAll", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> getAllProject() {
         List<?> all = projectService.getAll();
         return new ResponseEntity<>(all, HttpStatus.OK);
     }
 
-    @GetMapping("/getProjectById/{id}")
+    @GetMapping(value = "/getProjectById/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> getProjectById(@PathVariable long id) {
         Project project = projectService.getProjectById(id);
         return new ResponseEntity<>(project, HttpStatus.OK);

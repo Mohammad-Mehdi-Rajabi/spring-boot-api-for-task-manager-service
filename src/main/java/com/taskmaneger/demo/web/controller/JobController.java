@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/job/")
-@CrossOrigin
 public class JobController {
 
     private JobService jobService;
@@ -22,32 +21,32 @@ public class JobController {
         this.jobService = jobService;
     }
 
-    @PostMapping("addJob")
+    @PostMapping(value = "addJob", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> addJob(@RequestBody JobDto job) {
         Response<?> response = jobService.addJob(job);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteJob/{id}")
+    @DeleteMapping(value = "/deleteJob/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> deleteById(@PathVariable long id) {
         Response<?> response = jobService.deleteById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
 
     }
 
-    @GetMapping("/getJobById/{id}")
+    @GetMapping(value = "/getJobById/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> getJobById(@PathVariable long id) {
         Job jobById = jobService.getJobById(id);
         return new ResponseEntity<>(jobById, HttpStatus.OK);
     }
 
 
-    @GetMapping("/getAll")
+    @GetMapping(value = "/getAll", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> getAll() {
         return new ResponseEntity<>(jobService.getAll(), HttpStatus.OK);
     }
 
-    @PutMapping("/editJob/{id}")
+    @PutMapping(value = "/editJob/{id}", headers = "Access-Control-Allow-Origin")
     public ResponseEntity<?> editJob(@PathVariable long id, @RequestBody JobDto jobDto) {
         return new ResponseEntity<>(jobService.editJob(id, jobDto), HttpStatus.OK);
     }
