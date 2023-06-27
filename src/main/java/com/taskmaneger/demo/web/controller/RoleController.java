@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/role/")
-@CrossOrigin(origins = "http://5.34.196.136:65000")
+@CrossOrigin
 public class RoleController {
     private RoleService roleService;
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/financialDetail/")
-@CrossOrigin(origins = "http://5.34.196.136:65000")
+@CrossOrigin
 public class FinancialDetailController {
 
     private FinancialDetailService financialDetailService;

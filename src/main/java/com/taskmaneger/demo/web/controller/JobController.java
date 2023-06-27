@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/job/")
-@CrossOrigin(origins = "http://5.34.196.136:65000")
+@CrossOrigin
 public class JobController {
 
     private JobService jobService;

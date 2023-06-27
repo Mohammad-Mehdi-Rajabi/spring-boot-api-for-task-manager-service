@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user/")
-@CrossOrigin(origins = "http://5.34.196.136:65000")
+@CrossOrigin
 public class UserController {
 
     private UserService userService;

@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/project/")
-@CrossOrigin(origins = "http://5.34.196.136:65000")
+@CrossOrigin
 public class ProjectController {
 
     private ProjectService projectService;
