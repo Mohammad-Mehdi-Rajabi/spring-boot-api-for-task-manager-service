@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -38,5 +39,10 @@ public class JobService {
     public Response<?> deleteById(long id) {
         jobRepository.deleteById(id);
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+    }
+
+    public List<Job> getAll() {
+        List<Job> all = jobRepository.findAll();
+        return all;
     }
 }

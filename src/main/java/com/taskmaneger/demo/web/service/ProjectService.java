@@ -2,7 +2,6 @@ package com.taskmaneger.demo.web.service;
 
 
 import com.taskmaneger.demo.web.dataModel.Project;
-import com.taskmaneger.demo.web.dataModel.User;
 import com.taskmaneger.demo.web.dto.ProjectDto;
 import com.taskmaneger.demo.web.dto.Response;
 import com.taskmaneger.demo.web.dto.mapper.ProjectDtoMapper;
@@ -33,8 +32,9 @@ public class ProjectService {
 
     @Transactional
     public Response<?> editProjectById(long id, ProjectDto projectDto) {
-        //todo fix bug
-        projectRepository.editProjectById(id, projectDtoMapper.DtoToModel(projectDto));
+        Project project = projectDtoMapper.DtoToModel(projectDto);
+        project.setId(id);
+        projectRepository.save(project);
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
     }
 
@@ -47,6 +47,7 @@ public class ProjectService {
         List<Project> all = projectRepository.findAll();
         return all;
     }
+
     public Project getProjectById(Long id) {
         Optional<Project> byId = projectRepository.findById(id);
         return byId.orElse(null);

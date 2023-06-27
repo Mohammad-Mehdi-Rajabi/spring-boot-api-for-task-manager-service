@@ -44,4 +44,9 @@ public class RoleController {
         Role role = roleService.getRoleById(id);
         return new ResponseEntity<>(role, HttpStatus.OK);
     }
+
+    @PutMapping("/editRoleById/{id}")
+    public ResponseEntity<?> edit(@PathVariable long id, @RequestBody Role role) {
+        return new ResponseEntity<>(roleService.update(id, role), HttpStatus.OK);
+    }
 }

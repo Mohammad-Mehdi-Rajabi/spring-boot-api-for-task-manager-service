@@ -1,6 +1,7 @@
 package com.taskmaneger.demo.web.api;
 
 
+import com.taskmaneger.demo.web.dataModel.Job;
 import com.taskmaneger.demo.web.dto.JobDto;
 import com.taskmaneger.demo.web.dto.Response;
 import com.taskmaneger.demo.web.service.JobService;
@@ -31,5 +32,17 @@ public class JobController {
         Response<?> response = jobService.deleteById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
 
+    }
+
+    @GetMapping("/getJobById/{id}")
+    public ResponseEntity<?> getJobById(@PathVariable long id) {
+        Job jobById = jobService.getJobById(id);
+        return new ResponseEntity<>(jobById, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/getAll")
+    public ResponseEntity<?> getAll() {
+        return new ResponseEntity<>(jobService.getAll(), HttpStatus.OK);
     }
 }

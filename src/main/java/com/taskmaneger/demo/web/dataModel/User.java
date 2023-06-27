@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -28,6 +29,8 @@ public class User {
     @JoinColumn(name = "RoleId", nullable = false)
     private Role role;
 
+    @ManyToMany
+    private List<Project> projects;
 
     private String address;
 

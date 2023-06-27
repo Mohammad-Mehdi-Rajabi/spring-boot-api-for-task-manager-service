@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,5 +39,11 @@ public class RoleService {
     public Role getRoleById(long id) {
         Optional<Role> byId = roleRepository.findById(id);
         return byId.orElse(null);
+    }
+
+    @Transactional
+    public Response<?> update(long id, Role role) {
+        roleRepository.editRoleById(id, role);
+        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
     }
 }
