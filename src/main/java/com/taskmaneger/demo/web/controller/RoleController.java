@@ -1,4 +1,4 @@
-package com.taskmaneger.demo.web.api;
+package com.taskmaneger.demo.web.controller;
 
 
 import com.taskmaneger.demo.web.dataModel.Role;
@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/role/")
+@CrossOrigin(origins = "http://5.34.196.136:65000")
 public class RoleController {
     private RoleService roleService;
 

@@ -1,4 +1,4 @@
-package com.taskmaneger.demo.web.api;
+package com.taskmaneger.demo.web.controller;
 
 
 import com.taskmaneger.demo.web.dto.FinancialDetailDto;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/financialDetail/")
+@CrossOrigin(origins = "http://5.34.196.136:65000")
 public class FinancialDetailController {
 
     private FinancialDetailService financialDetailService;

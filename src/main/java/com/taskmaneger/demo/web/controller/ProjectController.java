@@ -1,4 +1,4 @@
-package com.taskmaneger.demo.web.api;
+package com.taskmaneger.demo.web.controller;
 
 
 import com.taskmaneger.demo.web.dataModel.Project;
@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/project/")
+@CrossOrigin(origins = "http://5.34.196.136:65000")
 public class ProjectController {
 
     private ProjectService projectService;
