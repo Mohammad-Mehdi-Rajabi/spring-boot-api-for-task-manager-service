@@ -30,7 +30,7 @@ public class RoleService {
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), roleRepository.save(role));
     }
 
-
+    @Transactional
     public Response<?> deleteById(long id) {
         roleRepository.deleteById(id);
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
@@ -43,7 +43,8 @@ public class RoleService {
 
     @Transactional
     public Response<?> update(long id, Role role) {
-        roleRepository.editRoleById(id, role);
-        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+        role.setId(id);
+        Role save = roleRepository.save(role);
+        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), save);
     }
 }

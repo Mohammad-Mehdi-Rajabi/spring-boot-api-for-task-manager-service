@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +37,7 @@ public class JobService {
         return byId.orElse(null);
     }
 
+    @Transactional
     public Response<?> deleteById(long id) {
         jobRepository.deleteById(id);
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
@@ -44,5 +46,12 @@ public class JobService {
     public List<Job> getAll() {
         List<Job> all = jobRepository.findAll();
         return all;
+    }
+
+    @Transactional
+    public Response<?> editJob(long id, JobDto job) {
+        job.setId(id);
+        Job save = jobRepository.save(jobDtoMapper.DtoToModel(job));
+        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), save);
     }
 }

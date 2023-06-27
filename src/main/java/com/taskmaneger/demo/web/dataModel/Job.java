@@ -20,6 +20,9 @@ public class Job {
     private Project project;
 
     @ManyToMany
+    @JoinTable(name = "job_user_list",
+            joinColumns = @JoinColumn(name = "job_id" , referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "user_list_id" , referencedColumnName = "id"))
     private List<User> userList;
 
     private String title;

@@ -29,8 +29,10 @@ public class User {
     @JoinColumn(name = "RoleId", nullable = false)
     private Role role;
 
-    @ManyToMany
-    private List<Project> projects;
+
+
+
+
 
     private String address;
 

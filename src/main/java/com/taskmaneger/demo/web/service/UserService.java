@@ -31,19 +31,17 @@ public class UserService {
 
     @Transactional
     public Response<?> deleteUser(Long id) {
-        userRepository.deleteUserById(id);
+        userRepository.deleteById(id);
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
     }
 
-    public User getUserById(Long id) {
-        Optional<User> byId = userRepository.findById(id);
-        return byId.orElse(null);
-    }
+
 
     @Transactional
     public Response<?> editUser(Long id, UserDto userDto) {
-        userRepository.editUserById(id, userDtoMapper.DtoToModel(userDto));
-        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+        userDto.setId(id);
+        User save = userRepository.save(userDtoMapper.DtoToModel(userDto));
+        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), save);
     }
 
     public List<User> getAll() {

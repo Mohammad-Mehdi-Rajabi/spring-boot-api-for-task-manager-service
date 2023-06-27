@@ -34,10 +34,11 @@ public class ProjectService {
     public Response<?> editProjectById(long id, ProjectDto projectDto) {
         Project project = projectDtoMapper.DtoToModel(projectDto);
         project.setId(id);
-        projectRepository.save(project);
-        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+        Project save = projectRepository.save(project);
+        return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), save);
     }
 
+    @Transactional
     public Response<?> deleteById(long id) {
         projectRepository.deleteById(id);
         return new Response<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);

@@ -45,4 +45,9 @@ public class JobController {
     public ResponseEntity<?> getAll() {
         return new ResponseEntity<>(jobService.getAll(), HttpStatus.OK);
     }
+
+    @PutMapping("/editJob/{id}")
+    public ResponseEntity<?> editJob(@PathVariable long id, @RequestBody JobDto jobDto) {
+        return new ResponseEntity<>(jobService.editJob(id, jobDto), HttpStatus.OK);
+    }
 }
