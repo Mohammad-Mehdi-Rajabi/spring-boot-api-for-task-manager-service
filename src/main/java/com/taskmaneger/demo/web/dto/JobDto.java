@@ -11,7 +11,7 @@ public class JobDto {
 
     private long id;
 
-    private ProjectDtoForJobReq project;
+    private ProjectDtoForReq project;
 
     private List<UserDtoForReq> userList;
 

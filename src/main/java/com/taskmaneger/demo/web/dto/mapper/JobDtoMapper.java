@@ -13,13 +13,13 @@ import java.util.List;
 
 @Component
 public class JobDtoMapper implements Mapper<JobDto, Job> {
-    private ProjectDtoForJobReqMapper projectDtoForJobReqMapper;
+    private ProjectDtoForReqMapper projectDtoForReqMapper;
     private UserDtoForReqMapper userDtoForReqMapper;
 
 
     @Autowired
-    public JobDtoMapper(ProjectDtoForJobReqMapper projectDtoForJobReqMapper, UserDtoForReqMapper userDtoForReqMapper) {
-        this.projectDtoForJobReqMapper = projectDtoForJobReqMapper;
+    public JobDtoMapper(ProjectDtoForReqMapper projectDtoForReqMapper, UserDtoForReqMapper userDtoForReqMapper) {
+        this.projectDtoForReqMapper = projectDtoForReqMapper;
         this.userDtoForReqMapper = userDtoForReqMapper;
     }
 
@@ -30,7 +30,7 @@ public class JobDtoMapper implements Mapper<JobDto, Job> {
         jobDto.setAbout(model.getAbout());
         jobDto.setExpireDate(model.getExpireDate());
         jobDto.setId(model.getId());
-        jobDto.setProject(projectDtoForJobReqMapper.modelToDto(model.getProject()));
+        jobDto.setProject(projectDtoForReqMapper.modelToDto(model.getProject()));
         jobDto.setTitle(model.getTitle());
         List<UserDtoForReq> userDtoForReqList =
                 new ArrayList<>();
@@ -47,7 +47,7 @@ public class JobDtoMapper implements Mapper<JobDto, Job> {
         job.setAbout(dto.getAbout());
         job.setExpireDate(dto.getExpireDate());
         job.setId(dto.getId());
-        job.setProject(projectDtoForJobReqMapper.DtoToModel(dto.getProject()));
+        job.setProject(projectDtoForReqMapper.DtoToModel(dto.getProject()));
         job.setTitle(dto.getTitle());
         List<User> userDtoForReqList =
                 new ArrayList<>();
