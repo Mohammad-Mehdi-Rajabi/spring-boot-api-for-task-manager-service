@@ -21,31 +21,31 @@ public class RoleController {
         this.roleService = roleService;
     }
 
-    @GetMapping(value = "/getAll", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getAll")
     public ResponseEntity<?> getAllRoles() {
         List<Role> allRoles = roleService.getAllRoles();
         return ResponseEntity.ok(allRoles);
     }
 
-    @PostMapping(value = "/addRole", headers = "Access-Control-Allow-Origin")
+    @PostMapping(value = "/addRole")
     public ResponseEntity<?> addNewRole(@RequestBody Role role) {
         Response<Role> roleResponse = roleService.addNewRole(role);
         return new ResponseEntity<>(roleResponse, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/deleteRoleById/{id}", headers = "Access-Control-Allow-Origin")
+    @DeleteMapping(value = "/deleteRoleById/{id}")
     public ResponseEntity<?> deleteRole(@PathVariable long id) {
         Response<?> response = roleService.deleteById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/getRoleById/{id}", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getRoleById/{id}")
     public ResponseEntity<?> getRoleById(@PathVariable long id) {
         Role role = roleService.getRoleById(id);
         return new ResponseEntity<>(role, HttpStatus.OK);
     }
 
-    @PutMapping(value = "/editRoleById/{id}", headers = "Access-Control-Allow-Origin")
+    @PutMapping(value = "/editRoleById/{id}")
     public ResponseEntity<?> edit(@PathVariable long id, @RequestBody Role role) {
         return new ResponseEntity<>(roleService.update(id, role), HttpStatus.OK);
     }
