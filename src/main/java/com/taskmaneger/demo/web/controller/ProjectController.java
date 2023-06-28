@@ -25,31 +25,31 @@ public class ProjectController {
     }
 
 
-    @PostMapping(value = "/addProject", headers = "Access-Control-Allow-Origin")
+    @PostMapping(value = "/addProject")
     public ResponseEntity<?> addProject(@RequestBody ProjectDto projectDto) {
         Response<?> response = projectService.addProject(projectDto);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PutMapping(value = "editProject/{id}", headers = "Access-Control-Allow-Origin")
+    @PutMapping(value = "editProject/{id}")
     public ResponseEntity<?> editProjectById(@PathVariable long id, @RequestBody ProjectDto projectDto) {
         Response<?> response = projectService.editProjectById(id, projectDto);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/deleteProject/{id}", headers = "Access-Control-Allow-Origin")
+    @DeleteMapping(value = "/deleteProject/{id}")
     public ResponseEntity<?> deleteProject(@PathVariable long id) {
         Response<?> response = projectService.deleteById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/getAll", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getAll")
     public ResponseEntity<?> getAllProject() {
         List<?> all = projectService.getAll();
         return new ResponseEntity<>(all, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/getProjectById/{id}", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getProjectById/{id}")
     public ResponseEntity<?> getProjectById(@PathVariable long id) {
         Project project = projectService.getProjectById(id);
         return new ResponseEntity<>(project, HttpStatus.OK);
