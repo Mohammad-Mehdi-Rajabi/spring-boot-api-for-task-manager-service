@@ -21,25 +21,25 @@ public class FinancialDetailController {
         this.financialDetailService = financialDetailService;
     }
 
-    @GetMapping(value = "/getAll", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getAll")
     public ResponseEntity<?> getAll() {
         Response<?> all = financialDetailService.getAll();
         return new ResponseEntity<>(all, HttpStatus.OK);
     }
 
-    @PostMapping(value = "/addFinancialDetail", headers = "Access-Control-Allow-Origin")
+    @PostMapping(value = "/addFinancialDetail")
     public ResponseEntity<?> addFinancialDetail(@RequestBody FinancialDetailDto financialDetailDto) {
         Response<?> response = financialDetailService.addFinancialDetail(financialDetailDto);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/getFinancialDetailById/{id}", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getFinancialDetailById/{id}")
     public ResponseEntity<?> getFinancialDetailById(@PathVariable long id) {
         Response<?> response = financialDetailService.getFinancialDetailById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/deleteFinancialDetailById/{id}", headers = "Access-Control-Allow-Origin")
+    @DeleteMapping(value = "/deleteFinancialDetailById/{id}")
     public ResponseEntity<?> deleteFinancialDetailById(@PathVariable long id) {
         Response<?> response = financialDetailService.deleteByID(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
