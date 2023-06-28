@@ -21,32 +21,32 @@ public class JobController {
         this.jobService = jobService;
     }
 
-    @PostMapping(value = "addJob", headers = "Access-Control-Allow-Origin")
+    @PostMapping(value = "addJob")
     public ResponseEntity<?> addJob(@RequestBody JobDto job) {
         Response<?> response = jobService.addJob(job);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/deleteJob/{id}", headers = "Access-Control-Allow-Origin")
+    @DeleteMapping(value = "/deleteJob/{id}")
     public ResponseEntity<?> deleteById(@PathVariable long id) {
         Response<?> response = jobService.deleteById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
 
     }
 
-    @GetMapping(value = "/getJobById/{id}", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getJobById/{id}")
     public ResponseEntity<?> getJobById(@PathVariable long id) {
         Job jobById = jobService.getJobById(id);
         return new ResponseEntity<>(jobById, HttpStatus.OK);
     }
 
 
-    @GetMapping(value = "/getAll", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getAll")
     public ResponseEntity<?> getAll() {
         return new ResponseEntity<>(jobService.getAll(), HttpStatus.OK);
     }
 
-    @PutMapping(value = "/editJob/{id}", headers = "Access-Control-Allow-Origin")
+    @PutMapping(value = "/editJob/{id}")
     public ResponseEntity<?> editJob(@PathVariable long id, @RequestBody JobDto jobDto) {
         return new ResponseEntity<>(jobService.editJob(id, jobDto), HttpStatus.OK);
     }
