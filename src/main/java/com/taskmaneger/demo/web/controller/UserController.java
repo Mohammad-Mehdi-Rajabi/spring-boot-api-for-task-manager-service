@@ -22,31 +22,31 @@ public class UserController {
     }
 
 
-    @PostMapping(value = "/addUser", headers = "Access-Control-Allow-Origin")
+    @PostMapping(value = "/addUser")
     public ResponseEntity<?> addNewUser(@RequestBody UserDto userDto) {
         Response<User> userResponse = userService.addNewUser(userDto);
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/deleteUser/{id}", headers = "Access-Control-Allow-Origin")
+    @DeleteMapping(value = "/deleteUser/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         Response<?> okResponse = userService.deleteUser(id);
         return new ResponseEntity<>(okResponse, HttpStatus.OK);
     }
 
 
-    @PutMapping(value = "/editUser/{id}", headers = "Access-Control-Allow-Origin")
+    @PutMapping(value = "/editUser/{id}")
     public ResponseEntity<?> editUser(@PathVariable Long id, @RequestBody UserDto userDto) {
         Response<?> okResponse = userService.editUser(id, userDto);
         return new ResponseEntity<>(okResponse, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/getAll", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getAll")
     public ResponseEntity<?> getAll() {
         return ResponseEntity.ok(userService.getAll());
     }
 
-    @GetMapping(value = "/getUserById/{id}", headers = "Access-Control-Allow-Origin")
+    @GetMapping(value = "/getUserById/{id}")
     public ResponseEntity<?> getUserById(@PathVariable long id) {
         User userById = userService.getUserById(id);
         return new ResponseEntity<>(userById, HttpStatus.OK);
